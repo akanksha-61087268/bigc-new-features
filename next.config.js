@@ -3,6 +3,10 @@ const createNextIntlPlugin = require('next-intl/plugin');
 
 const withNextIntl = createNextIntlPlugin();
 
+// makeswift
+const createWithMakeswift = require("@makeswift/runtime/next/plugin")
+const withMakeswift = createWithMakeswift()
+
 const cspHeader = `
   base-uri 'self';
   form-action 'self';
@@ -40,4 +44,5 @@ const nextConfig = {
   },
 };
 
+module.exports = withMakeswift(nextConfig)
 module.exports = withNextIntl(nextConfig);
